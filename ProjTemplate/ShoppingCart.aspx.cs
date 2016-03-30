@@ -165,7 +165,7 @@ public partial class ShoppingCart : System.Web.UI.Page
     string siteName = BalloonShopConfiguration.SiteName;
     // Create the PayPal redirect location
     string redirect = "";
-    redirect += "https://www.paypal.com/xclick/business=iloveshoes@gmail.com";
+    redirect += "https://www.paypal.com/xclick/business=dooing84@gmail.com";
     redirect += "&item_name=" + "Shoe Infinity and Beyond" + " Order " + orderId;
     redirect += "&item_number=" + orderId;
     redirect += "&amount=" + String.Format("{0:0.00} ", amount);
