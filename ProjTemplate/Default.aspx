@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/BalloonShop.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" Title="Welcome to SIAB!" %>
+<%@ Page Language="C#" MasterPageFile="~/BalloonShop.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" Title="Welcome to RC-Car Shop!" %>
 
 <%@ Register Src="UserControls/ProductsList.ascx" TagName="ProductsList" TagPrefix="uc1" %>
 <asp:Content ID="content" ContentPlaceHolderID="contentPlaceHolder" Runat="server">
