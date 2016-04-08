@@ -175,4 +175,9 @@ public partial class ShoppingCart : System.Web.UI.Page
     // Redirect to the payment page
     Response.Redirect(redirect);
   }
+
+    protected void grid_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

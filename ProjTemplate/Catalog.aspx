@@ -1,6 +1,6 @@
 <%@ Page Language="C#" MasterPageFile="~/BalloonShop.master" 
 AutoEventWireup="true" CodeFile="Catalog.aspx.cs" Inherits="Catalog" 
-Title="Welcome to Shoe Shoe Infinity and Beyond" %>
+Title="Welcome to Toy Car World" %>
 
 <%@ Register Src="UserControls/ProductsList.ascx" TagName="ProductsList" TagPrefix="uc1" %>
 <asp:Content ID="content" ContentPlaceHolderID="contentPlaceHolder" Runat="Server">

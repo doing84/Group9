@@ -19,6 +19,7 @@ public struct CategoryDetails
   public int DepartmentId;
   public string Name;
   public string Description;
+  
 }
 
 /// <summary>
@@ -121,7 +122,7 @@ public static class CatalogAccess
     // create a new parameter
     DbParameter param = comm.CreateParameter();
     param.ParameterName = "@ProductID";
-    param.Value = productId;
+    param.Value = Convert.ToInt32(productId);
     param.DbType = DbType.Int32;
     comm.Parameters.Add(param);
     // execute the stored procedure
@@ -923,9 +924,114 @@ public static class CatalogAccess
     // result will be 1 in case of success 
     return (result != -1);
   }
+    public static DataTable GetReviews(int productId)
+    {
+        // get a configured DbCommand object
+        DbCommand comm = GenericDataAccess.CreateCommand();
+        // set the stored procedure name
+        comm.CommandText = "ReviewList";
+        // create a new parameter
+        DbParameter param = comm.CreateParameter();
+        param.ParameterName = "@ProductID";
+        param.Value = productId;
+        param.DbType = DbType.Int32;
+        comm.Parameters.Add(param);
 
-  // gets product recommendations
-  public static DataTable GetRecommendations(string productId)
+        // execute the stored procedure and save the results in a DataTable
+        DataTable table = GenericDataAccess.ExecuteSelectCommand(comm);
+
+        // return the page of products
+        return table;
+    }
+
+
+    public static bool CreateReview(string userID, int productId, string name, string desc)
+    {
+        // get a configured DbCommand object
+        DbCommand comm = GenericDataAccess.CreateCommand();
+        // set the stored procedure name
+        comm.CommandText = "ReviewCreate";
+        // create a new parameter
+        DbParameter param = comm.CreateParameter();
+        param.ParameterName = "@UserID";
+        param.Value = userID;
+        param.DbType = DbType.String;
+        param.Size = 30;
+        comm.Parameters.Add(param);
+        // create a new parameter
+        param = comm.CreateParameter();
+        param.ParameterName = "@ProductID";
+        param.Value = productId;
+        param.DbType = DbType.Int32;
+        comm.Parameters.Add(param);
+        // create a new parameter
+        param = comm.CreateParameter();
+        param.ParameterName = "@Name";
+        param.Value = name;
+        param.DbType = DbType.String;
+        param.Size = 200;
+        comm.Parameters.Add(param);
+        // create a new parameter
+        param = comm.CreateParameter();
+        param.ParameterName = "@Description";
+        param.Value = desc;
+        param.DbType = DbType.String;
+        param.Size = 1000;
+        comm.Parameters.Add(param);
+
+        // result will represent the number of changed rows
+        int result = -1;
+        try
+        {
+            // execute the stored procedure
+            result = GenericDataAccess.ExecuteNonQuery(comm);
+        }
+        catch
+        {
+            // any errors are logged in GenericDataAccess, we ingore them here
+        }
+        // result will be 1 in case of success 
+        return (result != -1);
+    }
+
+    // Delete a WishLIst
+    public static bool DeleteReview(string userID, int productID)
+    {
+        // get a configured DbCommand object
+        DbCommand comm = GenericDataAccess.CreateCommand();
+        // set the stored procedure name
+        comm.CommandText = "ReviewDelete";
+        // create a new parameter
+        DbParameter param = comm.CreateParameter();
+        param.ParameterName = "@UserID";
+        param.Value = userID;
+        param.DbType = DbType.String;
+        param.Size = 30;
+        comm.Parameters.Add(param);
+        // create a new parameter
+        param = comm.CreateParameter();
+        param.ParameterName = "@ProductID";
+        param.Value = productID;
+        param.DbType = DbType.Int32;
+        comm.Parameters.Add(param);
+
+        // result will represent the number of changed rows
+        int result = -1;
+        try
+        {
+            // execute the stored procedure
+            result = GenericDataAccess.ExecuteNonQuery(comm);
+        }
+        catch
+        {
+            // any errors are logged in GenericDataAccess, we ingore them here
+        }
+        // result will be 1 in case of success 
+        return (result != -1);
+    }
+
+    // gets product recommendations
+    public static DataTable GetRecommendations(string productId)
   {
     // get a configured DbCommand object
     DbCommand comm = GenericDataAccess.CreateCommand();

@@ -6,7 +6,7 @@
   <asp:Label ID="titleLabel" runat="server" Text="Your Shopping Cart" CssClass="ShoppingCartTitle" />
   <br />
   <asp:Label ID="statusLabel" CssClass="AdminPageText" ForeColor="Red" runat="server" /><br />
-  <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID" Width="100%" BorderWidth="0px" OnRowDeleting="grid_RowDeleting">
+  <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID" Width="100%" BorderWidth="0px" OnRowDeleting="grid_RowDeleting" OnSelectedIndexChanged="grid_SelectedIndexChanged">
     <Columns>
       <asp:BoundField DataField="Name" HeaderText="Product Name" ReadOnly="True" SortExpression="Name" >
         <ControlStyle Width="100%" />

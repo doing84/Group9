@@ -9,14 +9,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  <title>SIAB</title>
+  <title>Toy Car</title>
+      <asp:ContentPlaceHolder id="headPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="Css/compiled.css?v=201404281344" />
 </head>
 <body>
   <form id="Form1" runat="server">
     <table cellspacing="0" cellpadding="0" width="770" border="0">
       <tr>
         <td width="220" valign="top">
-          
+
+            <!---Login View--->
+            <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+                <!------------------ Before login ------------------> 
+            <asp:View ID="loginView" runat="server">
+            <ul>
+                 <li class="login">
+                                        <a href="/Account/Login.aspx" class="icon">
+                                            <span aria-hidden="true" class="icon-person"></span>                            
+                                            <span class="text">Login</span>
+                                            <a href="/Account/Register.aspx">Create an account &raquo;</a>
+                                        </a>
+                                </li>
+                            </ul>
+
+                        </asp:View>
+
+                <!------------------ After login ------------------> 
+             <asp:View ID="logoutView" runat="server">
+                        
+                           <ul>
+                                <li class="login">
+                                            <span aria-hidden="true" class="icon-person"></span>                            
+                                            <span class="text">Welcome! 
+                                                <asp:Label ID="userName" runat="server"></asp:Label></span>
+                                            <a id="logout" href="#" runat="server" onServerClick="btnLogout_Click">Logout</a>
+                                            <a href="/Account/Register.aspx">Modify an account &raquo;</a>
+                                </li>
+                            </ul>
+                          
+                        </asp:View>
+                    
+                    </asp:MultiView>
+          <!---Product List-->
           <br />
           <uc2:DepartmentsList ID="DepartmentsList1" runat="server" />
           <br />

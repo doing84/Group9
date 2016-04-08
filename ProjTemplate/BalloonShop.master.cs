@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 using System.Configuration;
-using System.Collections;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -11,6 +11,11 @@ using System.Web.UI.HtmlControls;
 
 public partial class BalloonShop : System.Web.UI.MasterPage
 {
+    private Account mbBiz = new Account();
+    HttpContext context = HttpContext.Current;
+    public string userID;
+    public bool isAdmin;
+
   // Website pages considered to be "catalog pages" that the visitor 
   // can "Continue Shopping" to
   private static string[] catalogPages = { "~/Default.aspx", "~/Catalog.aspx", "~/Search.aspx" };
@@ -18,6 +23,18 @@ public partial class BalloonShop : System.Web.UI.MasterPage
   // Executes when any page based on this master page loads
   protected void Page_Load(object sender, EventArgs e)
   {
+      if (!IsPostBack)
+      {
+          setLogin();
+
+          if (Convert.ToString(Request.Cookies["userInfo"]) != "")
+          {
+              userID = Request.Cookies["userInfo"]["mem_ID"];
+              
+          }
+          
+      }
+
     // Don't perform any actions on postback events
     if (!IsPostBack)
     {
@@ -35,6 +52,41 @@ public partial class BalloonShop : System.Web.UI.MasterPage
           // stop the for loop from continuing
           break;
         }
+
     }
   }
+  protected void setLogin()
+  {
+
+      //exist user info
+      //if (context.User.Identity.IsAuthenticated)
+      if (Convert.ToString(Request.Cookies["userInfo"]) != "")
+      {
+          this.MultiView1.ActiveViewIndex = 1;
+          userName.Text = Request.Cookies["userInfo"]["mem_Name"];
+      }
+      //not exist user info
+      else
+      {
+          this.MultiView1.ActiveViewIndex = 0;
+      }
+  }
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
+
+        string redPath = FormsAuthentication.GetRedirectUrl(context.User.Identity.Name, false);
+
+        FormsAuthentication.SignOut();
+
+        //delete cookie
+        if (Request.Cookies["userInfo"] != null)
+        {
+            HttpCookie myCookie = new HttpCookie("userInfo");
+            myCookie.Expires = DateTime.Now.AddDays(-1d);
+            Response.Cookies.Add(myCookie);
+        }
+
+        Response.Redirect("/Default.aspx", false);
+    }
 }
+
