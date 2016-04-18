@@ -70,5 +70,100 @@
       </tr>
     </table>
   </form>
+     <footer>
+        <div class="wrap">
+            <a href="/" class="logo"><img src="/images/Toycarstore.jpg" alt="Toy Car Store" /></a>
+            <address>
+                Toy Car Store <br />
+                 941 Progress Avenue <br />
+                Toronto, ON, M1G 3T8 <br />
+                Canada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            </address>
+                     
+            <ul class="third">
+                <li>
+                    <a href="http://www.centennialcollege.ca/">
+                        <img src="/images/Centennial.jpg" alt="Centennial College" height="60px" width="110px">
+
+                    </a>
+
+                </li>
+                <a class="icon" href="https://livechat.boldchat.com/aid/422135137631992176/bc.chat?resize=true&amp;cwdid=418381770886242287&amp;wdid=737062655151682738&amp;vr=&amp;vn=&amp;vi=&amp;ve=&amp;vp=&amp;iq=&amp;curl=" target="_blank" onclick="window.open((window.pageViewer &amp;&amp; pageViewer.link || function(link){return link;})(this.href + (this.href.indexOf('?')>=0 ? '&amp;' : '?') + 'url=' + escape(document.location.href)), 'Chat367233609785093432', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=640,height=480');return false;">
+   
+    <noscript>Live Chat</noscript>
+</a>
+            </ul>
+             <ul class="fourth">
+                <li>
+                    <a href="https://sealserver.trustkeeper.net/compliance/cert.php?code=x4irdzlmFVRIpWYHKIMpiFWOpDGWgo">
+                        <img src="https://sealserver.trustkeeper.net/compliance/seal.php?code=x4irdzlmFVRIpWYHKIMpiFWOpDGWgo" alt="Trustwave Trusted Commerce">
+                    </a>
+                </li>
+                <li>
+                    <br />
+                    <span class="siteseal">
+                        <script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=gGLUrmuGMeqgcRw1Swo93T9qmziTSLeOdvvlkp1Twv36JYzzidKAqVxrX"></script>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+  
+    <noscript>
+    <a href="http://www.boldchat.com" title="Live Chat Software" target="_blank"><img alt="Live Chat Software" src="https://vms.boldchat.com/aid/422135137631992176/bc.vmi?&amp;wdid=737062655151682738&amp;vr=&amp;vn=&amp;vi=&amp;ve=&amp;vp=&amp;iq=&amp;curl=" border="0" width="1" height="1" /></a>
+    </noscript>
+         
+
+  
+   
+<a id="popupLauncher" href="#subscribePopup" style="display:none;"></a>
+
+<div id="subscribePopup" style="display:none;">
+	
+    <div id="popup-header">
+        
+        <div id="popup-message">
+            <h2 style="color:#111" class="subscribe-message">GET YOUR CAR!</h2>
+            
+                <h2>Subscribe To Our Newsletter</h2>
+                <p style="color: #d32c3a;">
+                    <span class="subscribe-message">Our free Bargain Bulletin Newsletter is distributed regularly.</span><br />
+                    Sign up now to receive notice of promotions and other exciting Toy Car Store news and a chance to win a <strong>$30 Toy Car Store</strong> gift card.
+                </p>
+            
+        </div>
+    </div>
+    <div id="popup-form">
+        
+
+            <div class="clearfix">
+                <div id="form-left">
+                    <label for="">Email Address</label>
+                    <input type="email" id="Email_1" name="Email" placeholder="Email Address" maxlength="100" required="yes" />
+
+                    <input type="hidden" name="SubAction" value="sub_add_update" />
+                </div>
+            </div>
+                        
+            <div class="clearfix">
+                <input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1"></label>
+                <div class="tag">I agree to the terms below*</div>
+                <br />
+            </div>
+            
+            <button type="submit" class="button button_small">Subscribe</button>
+
+            <label>
+                <p>
+                <br />
+                    *I would like to receive marketing messages from Toy Car Store that may include email, direct mail, or individual communications. <br />
+                    I consent that Toy Car Store, processes and transfers my data and will never share or sell my data.<br />
+                    I understand that I can unsubscribe at any time. <a href="/Help/PrivacyAndSecurity">Read our Privacy Policy</a>.
+                </p>                
+            </label>
+
+    </div>
+</div>
 </body>
 </html>
